@@ -10,6 +10,6 @@ class Chamado extends Model {
 
 
     public function usuario() {
-        return $this->belongsTo(User::class, null, 'usuario_id');
+        return $this->belongsTo(User::class);
     }
 }

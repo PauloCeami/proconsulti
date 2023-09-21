@@ -12,11 +12,12 @@ class CreateUsuariosTable extends Migration {
      */
     public function up() {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('nome');
             $table->string('email')->unique();
-            $table->string('cpf')->unique();
+            $table->string('cpf', 11)->unique();
             $table->string('senha');
+            $table->string('tipo', 10);
             $table->timestamps();
             $table->softDeletes();
         });
